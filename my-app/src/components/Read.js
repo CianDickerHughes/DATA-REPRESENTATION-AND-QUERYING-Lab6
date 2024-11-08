@@ -11,7 +11,7 @@ const Read = () => {
     // get movies from http
     // explain: it tells React that your component needs to do something after render
     useEffect(() => {
-        axios.get('https://jsonblob.com/api/jsonblob/1287718524221775872') // json http
+        axios.get('http://localhost:4000/api/movies') // json http
           .then((response) => {
             setMovies(response.data.movies);
           })
