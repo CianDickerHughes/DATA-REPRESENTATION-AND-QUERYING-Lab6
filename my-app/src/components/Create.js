@@ -11,11 +11,10 @@ const Create = () => {
   const [poster, setPoster] = useState('');
 
   // hands the sumbmits of title of the movies
-  // create.js
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    //console.log(`Title: ${title}, Year: ${year}, Poster: ${poster}`);
+    console.log(`Title: ${title}, Year: ${year}, Poster: ${poster}`);
     
     const movie = {
       title: title,
@@ -23,10 +22,11 @@ const Create = () => {
       poster: poster
     };
   
-  axios.post('http://localhost:4000/api/movies', movie)
-    .then((res) => console.log(res.data))
-    .catch((err) => console.log(err.data));
-};
+    // get movies from localhost:4000
+    axios.post('http://localhost:4000/api/movies', movie)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err.data));
+  };
 
   // form to upload movies to the server
   return (
